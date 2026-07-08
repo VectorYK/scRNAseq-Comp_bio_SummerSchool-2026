@@ -33,7 +33,7 @@ cat(paste0("Matrix Sparsity: ", round(sparsity * 100, 2), "%\n"))
 
 # 2. Load the Metadata (.csv)
 # Set the first column as row names (crucial for matching barcodes)
-metadata_df <- read.csv("Module 4.1/metadata.csv", row.names = 1)
+metadata_df <- read.csv("data/metadata.csv", row.names = 1)
 
 # Check dimensions and preview
 print("Metadata Dimensions:")
