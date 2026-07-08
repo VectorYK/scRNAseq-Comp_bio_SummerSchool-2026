@@ -134,11 +134,12 @@ seu_obj <- RunUMAP(seu_obj, dims = 1:15)
 print(head(seu_obj@meta.data))
 
 # 4. Visualize Clusters vs Metadata
-p1 <- DimPlot(seu_obj, reduction = "umap", group.by = "RNA_snn_res.0.5", label = TRUE)
+
 p2 <- DimPlot(seu_obj, reduction = "umap", group.by = "celltype_major", label = TRUE)
 p3 <- DimPlot(seu_obj, reduction = "umap", group.by = "celltype_minor")
 
-p1 | p2 | p3
+p2
+p3
 
 # ------------------------------------------------------------------------------
 # STEP 6: Cell Type Frequency Analysis and Filtering
