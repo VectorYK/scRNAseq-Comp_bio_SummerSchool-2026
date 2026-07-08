@@ -173,8 +173,7 @@ print(table(seu_obj$cell_type_minor_filtered))
 
 # Visualize with new labels
 p1 <- DimPlot(seu_obj, reduction = "umap", group.by = "cell_type_minor_filtered")
-p2 <- DimPlot(seu_obj, reduction = "umap", group.by = "RNA_snn_res.0.5")
-p1|p2
+p1
 
 # Check a specific gene feature
 FeaturePlot(seu_obj, features = "KRT17")
