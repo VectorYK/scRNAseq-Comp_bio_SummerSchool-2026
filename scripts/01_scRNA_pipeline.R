@@ -87,6 +87,9 @@ top10 <- head(VariableFeatures(seu_obj), 10)
 print("Top 10 Variable Features:")
 print(top10)
 
+plot1 <- VariableFeaturePlot(seu_obj)
+plot2 <- LabelPoints(plot = plot1, points = top10, repel = TRUE, xnudge = 0, ynudge = 0)
+plot1 + plot2
 # ------------------------------------------------------------------------------
 # STEP 4: Scaling and PCA
 # ------------------------------------------------------------------------------
@@ -109,7 +112,7 @@ ElbowPlot(seu_obj)
 # 4. Visualize PCA vs Existing Metadata
 # Check if cell types are already separating in linear space
 DimPlot(seu_obj, reduction = "pca") + NoLegend()
-DimPlot(seu_obj, reduction = "pca", group.by = "celltype_major") + NoLegend()
+DimPlot(seu_obj, reduction = "pca", group.by = "celltype_major") 
 
 # ------------------------------------------------------------------------------
 # STEP 5: Clustering and UMAP
